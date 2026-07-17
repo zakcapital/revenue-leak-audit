@@ -24,6 +24,20 @@ Run the tests:
 python3 -m unittest discover -s tests -v
 ```
 
+## Stripe
+
+The Stripe sandbox foundation includes a one-time $49 Product, Price, and Payment Link. The public site remains email-first until a separately approved live launch.
+
+- Tailored plan: [`STRIPE_PLAN.md`](STRIPE_PLAN.md)
+- Account review: [`STRIPE_ACCOUNT_REVIEW.md`](STRIPE_ACCOUNT_REVIEW.md)
+- Setup and operating procedure: [`STRIPE_SETUP.md`](STRIPE_SETUP.md)
+
+Verify the sandbox configuration with:
+
+```bash
+scripts/verify_stripe_test_setup.sh
+```
+
 ## Sales workflow
 
 1. Find a service business with a clear, observable website problem.
