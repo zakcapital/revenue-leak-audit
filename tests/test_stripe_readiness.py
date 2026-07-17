@@ -22,6 +22,11 @@ class StripeReadinessTests(unittest.TestCase):
         self.assertIn('href="terms.html"', page)
         self.assertIn('href="privacy.html"', page)
 
+    def test_landing_page_uses_live_checkout_and_retains_support_contact(self):
+        page = Path("index.html").read_text(encoding="utf-8")
+        self.assertIn("https://buy.stripe.com/28E9AV6EU0Ckd6t0CS24000", page)
+        self.assertIn('href="mailto:cole@byquill.co"', page)
+
 
 if __name__ == "__main__":
     unittest.main()

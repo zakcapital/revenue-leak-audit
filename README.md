@@ -26,7 +26,7 @@ python3 -m unittest discover -s tests -v
 
 ## Stripe
 
-The Stripe sandbox foundation includes a one-time $49 Product, Price, and Payment Link. The public site remains email-first until a separately approved live launch.
+The Stripe integration includes a verified sandbox flow and a live one-time $49 Payment Link. The public site uses Stripe-hosted checkout and retains email support at `cole@byquill.co`.
 
 - Tailored plan: [`STRIPE_PLAN.md`](STRIPE_PLAN.md)
 - Account review: [`STRIPE_ACCOUNT_REVIEW.md`](STRIPE_ACCOUNT_REVIEW.md)
@@ -36,6 +36,7 @@ Verify the sandbox configuration with:
 
 ```bash
 scripts/verify_stripe_test_setup.sh
+scripts/verify_stripe_live_setup.sh
 ```
 
 ## Sales workflow

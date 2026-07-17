@@ -1,6 +1,6 @@
 # Stripe setup — Revenue Leak Audit by ByQuill
 
-Status: test-mode foundation complete; live sales are not enabled.
+Status: live $49 checkout launched after successful sandbox purchase and refund verification.
 
 ## Test resources
 
@@ -13,9 +13,17 @@ Status: test-mode foundation complete; live sales are not enabled.
 
 These IDs are non-secret test resource identifiers. API credentials are not stored in this repository.
 
+## Live resources
+
+- Product: `prod_UtpkcDtJ6HQ1au` — Website Revenue Leak Audit
+- One-time price: `price_1Tu2QbP74eEIlukTjXIY3TBy` — USD $49.00
+- Payment Link: `plink_1Tu2QdP74eEIlukT3hSk1YLV`
+- Checkout: https://buy.stripe.com/28E9AV6EU0Ckd6t0CS24000
+- Completion redirect: https://zakcapital.github.io/revenue-leak-audit/success.html
+
 ## Payments MVP
 
-The public site remains email-first until live launch approval. The test Payment Link:
+The public site links to the live Stripe-hosted checkout and retains `cole@byquill.co` for support. The checkout:
 
 - collects the customer email;
 - creates a Stripe Customer;
@@ -26,7 +34,7 @@ The public site remains email-first until live launch approval. The test Payment
 - redirects to the intake page after checkout;
 - requires manual payment verification before fulfillment.
 
-A test-mode $49 PaymentIntent succeeded and a full test refund succeeded. The hosted sandbox checkout was also verified to load the ByQuill product, description, and price. No real money moved.
+A sandbox $49 purchase and full refund succeeded through the hosted checkout. No real money moved during verification.
 
 ## Fulfillment procedure
 
@@ -63,17 +71,17 @@ Use Stripe Dashboard invoices for custom implementation work. Each engagement re
 
 Do not automate invoice creation until recurring manual work demonstrates a need.
 
-## Live launch gates
+## Launch record and controls
 
-Before creating live resources or replacing the public CTA:
+Completed before launch:
 
-- verify Stripe business identity, support details, payout account, branding, receipt settings, and the `BYQUILL` statement descriptor;
-- document the sales-tax decision; do not enable Stripe Tax without relevant registrations and review;
-- review eligible payment methods in Dashboard;
-- preview customer receipts and the Hosted Invoice Page;
-- approve creation of one live Product, Price, and Payment Link;
-- perform one controlled low-value live purchase and refund with explicit human approval;
-- confirm the payment, receipt, payout, intake, and refund records reconcile.
+- Stripe business details, card payments, charges, payouts, and transfers were verified active;
+- the Product, $49 one-time Price, Payment Link, checkout messaging, and success redirect were verified in live mode;
+- automatic tax remains disabled pending tax review;
+- the sandbox hosted checkout purchase and refund were verified;
+- the user explicitly approved activating the live resources and publishing the checkout CTA.
+
+No live test purchase was made because the project cannot justify spending money solely for testing. Treat the first genuine customer payment as the controlled live verification: manually confirm payment, receipt, intake, payout, and delivery before accepting additional orders.
 
 ## Verification
 
@@ -81,6 +89,7 @@ Run:
 
 ```sh
 scripts/verify_stripe_test_setup.sh
+scripts/verify_stripe_live_setup.sh
 python3 -m unittest discover -s tests -v
 ```
 
