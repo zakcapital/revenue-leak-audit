@@ -15,7 +15,7 @@ Do not imply that a flaw is costing a precise dollar amount unless there is evid
 
 ## First message
 
-> Hi [Name] — I noticed [specific, verifiable issue] on [Business]’s website. On mobile, that makes it harder for someone to [desired action]. I put together focused website audits that prioritize fixes by likely customer impact. The introductory audit is $49 and delivered within 48 hours: [landing-page URL]. If useful, reply “audit” and I’ll send the three details I need.
+> Hi [Name] — I noticed [specific, verifiable issue] on [Business]’s website. On mobile, that makes it harder for someone to [desired action]. I put together focused website audits that prioritize fixes by likely customer impact. The introductory audit is $49 and delivered within 48 hours: [landing-page URL]. If useful, reply “audit” or email cole@byquill.co and I’ll send the three details I need.
 
 ## Follow-up after 3–4 business days
 

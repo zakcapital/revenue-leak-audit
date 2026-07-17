@@ -6,10 +6,11 @@ class LandingPageTests(unittest.TestCase):
     def setUp(self):
         self.page = Path("index.html").read_text(encoding="utf-8")
 
-    def test_page_states_offer_price_and_turnaround(self):
+    def test_page_states_offer_price_turnaround_and_contact(self):
         self.assertIn("Website Revenue Leak Audit", self.page)
         self.assertIn("$49", self.page)
         self.assertIn("48 hours", self.page)
+        self.assertIn("mailto:cole@byquill.co", self.page)
 
     def test_page_has_no_unsubstantiated_testimonials(self):
         lowered = self.page.lower()

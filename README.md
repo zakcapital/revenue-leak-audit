@@ -8,6 +8,7 @@ A small, productized service for finding conversion, trust, mobile, and search p
 - Turnaround: **48 hours**
 - Deliverable: prioritized Markdown/PDF-ready report
 - No recurring subscription
+- Contact: **cole@byquill.co**
 
 ## Audit tool
 

@@ -82,8 +82,7 @@
     .request-note { margin-top: 16px; color: #a8a8a8; font-size: 13px; text-align: right; }
     footer { padding: 32px 0 56px; color: var(--faint); font-size: 13px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 24px; }
-    #toast { position: fixed; right: 20px; bottom: 20px; padding: 12px 16px; border-radius: 7px; background: var(--ink); color: white; font-size: 14px; opacity: 0; transform: translateY(10px); pointer-events: none; transition: .2s ease; }
-    #toast.show { opacity: 1; transform: translateY(0); }
+
     @media (max-width: 760px) {
       .nav-links a:not(.button) { display: none; }
       .hero { padding: 80px 0 72px; }
@@ -191,8 +190,8 @@
             <p class="price"><strong>$49</strong> once · delivered within 48 hours</p>
           </div>
           <div>
-            <button class="button" type="button" id="copyRequest">Copy request message</button>
-            <p class="request-note">Then reply to the message that brought you here.</p>
+            <a class="button" href="mailto:cole@byquill.co?subject=Website%20Revenue%20Leak%20Audit&body=Website%3A%20%0AMost%20important%20service%3A%20%0ABest%20customer%20action%3A%20call%20%2F%20form%20%2F%20booking">Request the audit</a>
+            <p class="request-note">Email cole@byquill.co</p>
           </div>
         </div>
       </div>
@@ -202,25 +201,8 @@
   <footer>
     <div class="wrap footer-inner">
       <span>Website Revenue Leak Audit</span>
-      <span>Independent review · No recurring commitment</span>
+      <a href="mailto:cole@byquill.co">cole@byquill.co</a>
     </div>
   </footer>
-  <div id="toast" role="status" aria-live="polite">Request copied</div>
-  <script>
-    const button = document.querySelector('#copyRequest');
-    const toast = document.querySelector('#toast');
-    button.addEventListener('click', async () => {
-      const request = 'AUDIT REQUEST\nWebsite: [paste URL]\nMost important service: [service]\nBest customer action: [call / form / booking]';
-      try {
-        await navigator.clipboard.writeText(request);
-        toast.textContent = 'Request copied — paste it into your reply';
-      } catch (_) {
-        window.prompt('Copy this request:', request);
-        toast.textContent = 'Request ready';
-      }
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2800);
-    });
-  </script>
 </body>
 </html>
